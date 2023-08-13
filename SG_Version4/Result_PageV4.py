@@ -176,8 +176,12 @@ class ResultPage:
                            f"which is less than the recommended "
                            f"{reference_hours} hours.")
         else:
+<<<<<<< HEAD
             result_text = (f"{username}, You slept {hours_slept} \n"
                            f"which is the recommended amount of sleep.")
+=======
+            result_text = f"{username}, You slept {hours_slept} \nwhich is the recommended amount of sleep."
+>>>>>>> 880fd0e739566e2e44283fb0ef26c45c074fffd9
 
         # display the result
         result_label = tk.Label(
@@ -219,10 +223,14 @@ class ResultPage:
 
         # Insert the sleep tips into the database
         cursor.executemany(
+<<<<<<< HEAD
             """
             INSERT INTO Sleep_Suggestions (SuggestionID, Suggestions)
             VALUES (?, ?)
             """,
+=======
+            "INSERT INTO Sleep_Suggestions (SuggestionID, Suggestions) VALUES (?, ?)",
+>>>>>>> 880fd0e739566e2e44283fb0ef26c45c074fffd9
             sleep_tips)
 
         # Commit the changes and close the connection
@@ -386,8 +394,12 @@ class ResultPage:
             # Show a message box with the average sleep
             messagebox.showinfo(
                 "Average Sleep",
+<<<<<<< HEAD
                 f"Your average sleep for this week was: "
                 f"{average_sleep:.2f} hours")
+=======
+                f"Your average sleep for this week was: {average_sleep:.2f} hours")
+>>>>>>> 880fd0e739566e2e44283fb0ef26c45c074fffd9
 
             # All Hours_Slept columns have data, delete the user's data
             delete_query = 'DELETE FROM UsersSleepData WHERE User_Name = ?'
